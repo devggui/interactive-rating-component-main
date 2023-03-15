@@ -1,0 +1,26 @@
+:root {
+  /* ### Primary */
+  
+  --Orange: hsl(25, 97%, 53%);
+  
+  /* ### Neutral */
+  
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Medium-Grey: hsl(216, 12%, 54%);
+  --Dark-Blue: hsl(213, 20%, 18%);
+  --Dark-Blue-Light: hsl(207, 16%, 22%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Overpass', sans-serif;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: var(--Light-Grey);
+  color: var(--White);
+}

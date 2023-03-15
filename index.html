@@ -4,46 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/root.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-
+<body class="h-screen flex items-center justify-center bg-[var(--Very-Dark-Blue)]">
   <!-- Rating state start -->
-
-  How did we do?
-
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
-
-  1 2 3 4 5
-
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
+  <form action="javascript:thankYou()" class="w-96 flex flex-col justify-between rounded-2xl p-6 m-6 bg-[var(--Dark-Blue)]" id="form">
+    <div class="w-12 h-12 flex items-center justify-center text-center bg-[var(--Dark-Blue-Light)] rounded-full mb-4">
+      <img src="./images/icon-star.svg" alt="Icone de uma estrela na cor laranja.">
+    </div>
+    <h1 class="text-2xl font-bold text-[var(--White)] mb-2">How did we do?</h1>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <p class="font-normal text-[var(--Light-Grey)]">Please let us know how we did with your support request. All feedback is appreciated sto help us improve our offering!</p>
+  
+    <div class="w-full flex flex-row justify-between items-center text-center my-6">
+      <input type="checkbox" id="check1" class="hidden">
+      <label for="check1" class="flex items-center text-center justify-center w-12 h-12 rounded-full bg-[var(--Dark-Blue-Light)] text-[var(--Medium-Grey)] md:hover:bg-[var(--Orange)] md:hover:text-[var(--White)]">1</label>
+      <input type="checkbox" id="check2" class="hidden">
+      <label for="check2" class="flex items-center text-center justify-center w-12 h-12 rounded-full bg-[var(--Dark-Blue-Light)] text-[var(--Medium-Grey)] md:hover:bg-[var(--Orange)] md:hover:text-[var(--White)]">2</label>
+      <input type="checkbox" id="check3" class="hidden">
+      <label for="check3" class="flex items-center text-center justify-center w-12 h-12 rounded-full bg-[var(--Dark-Blue-Light)] text-[var(--Medium-Grey)] md:hover:bg-[var(--Orange)] md:hover:text-[var(--White)]">3</label>
+      <input type="checkbox" id="check4" class="hidden">
+      <label for="check4" class="flex items-center text-center justify-center w-12 h-12 rounded-full bg-[var(--Dark-Blue-Light)] text-[var(--Medium-Grey)] md:hover:bg-[var(--Orange)] md:hover:text-[var(--White)]">4</label>
+      <input type="checkbox" id="check5" class="hidden">
+      <label for="check5" class="flex items-center text-center justify-center w-12 h-12 rounded-full bg-[var(--Dark-Blue-Light)] text-[var(--Medium-Grey)] md:hover:bg-[var(--Orange)] md:hover:text-[var(--White)]">5</label>
+    </div>
+  
+    <button type="submit" class="w-full p-2 bg-[var(--Orange)] text-white font-normal rounded-3xl hover:bg-[var(--White)] hover:text-[var(--Orange)]" id="submit">S U B M I T</button>      
+  </form>
+  <!-- Rating state end -->
+  
+  <!-- Thank you state start -->
+  <div class="w-96 hidden flex-col items-center text-center justify-between rounded-2xl p-6 m-6 bg-[var(--Dark-Blue)]" id="thankyou">
+    <div class="flex items-center justify-center text-center"><img src="./images/illustration-thank-you.svg" alt="Imagem de um celular com um papel saindo da tela e um cartão laranja flutuando em frente ao celular."></div>
+    <div class="w-max mx-auto flex items-center justify-center px-3 py-1 my-6 rounded-3xl bg-[var(--Dark-Blue-Light)]" id="selected">
+      <!-- dinamic html -->
+    </div>
+    <h1 class="text-2xl font-bold text-[var(--White)] mb-2">Thank you!</h1>
+    <p class="font-normal text-[var(--Light-Grey)]">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
   </div>
+  <!-- Thank you state end -->
+  
+  <script src="./js/app.js"></script>
 </body>
 </html>
